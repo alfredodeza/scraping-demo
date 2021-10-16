@@ -1,4 +1,2 @@
 CREATE DATABASE exploitdb
-  ENCODING 'UTF8'
-  LC_COLLATE 'en-US'
-  LC_CTYPE 'en-US';
+  ENCODING 'UTF8';
