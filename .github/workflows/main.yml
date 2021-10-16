@@ -24,7 +24,16 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
-
-      - name: 
+        
+      - name: run scrapy 
         run: scrapy crawl exploit
         working-directory: cve
+        
+      - uses: Azure/login@v1
+        with:
+          creds: ${{secrets.AZURE_CREDENTIALS}}
+      - uses: azure/postgresql@v1
+        with:
+          connection-string: ${{ secrets.AZURE_POSTGRESQL_CONNECTION_STRING }}
+          server-name: exploit-db.postgres.database.azure.com
+          plsql-file: "sql_files/*.sql"
