@@ -1,6 +1,6 @@
 -- Uncomment when db doesn't exist
--- CREATE DATABASE exploitdb
---  ENCODING 'UTF8';
+CREATE DATABASE exploitdb
+  ENCODING 'UTF8';
 
 CREATE TABLE IF NOT EXISTS exploit (
 	id integer primary key,
